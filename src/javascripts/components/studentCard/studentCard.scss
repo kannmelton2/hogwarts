@@ -1,7 +1,7 @@
 @import '../../../styles/colors';
 @import '../../../styles/variables';
 
-.student-card {
+%student-card {
   width: 18%;
   margin: 1%;
   background-color: $gold;
@@ -20,4 +20,27 @@
     @include default-font(1.5rem);
     padding-left: .25em;
   }
+}
+
+@mixin house-styles($housecolor) {
+  @extend %student-card;
+  h2 {
+    color: $housecolor;
+  }
+}
+
+.student-gryffindor {
+  @include house-styles($gryffindor);
+}
+
+.student-hufflepuff {
+  @include house-styles($hufflepuff);
+}
+
+.student-ravenclaw {
+  @include house-styles($ravenclaw);
+}
+
+.student-slytherin {
+  @include house-styles($slytherin);
 }
